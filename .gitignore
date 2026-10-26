@@ -1,0 +1,15 @@
+# Large inputs and intermediates (rebuilt by scripts/01-07)
+data/
+models/
+results/**/*.h5ad
+results/**/*.png
+
+# Slurm logs (directory kept so sbatch -o logs/... works)
+logs/*
+!logs/.gitkeep
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.DS_Store

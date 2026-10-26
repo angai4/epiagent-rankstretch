@@ -1,0 +1,28 @@
+# Versions that produced the results in README.md (Linux x86_64, CUDA 12 GPU for steps 04 and 06).
+# mamba env create -f environment.yml
+name: epiagent-rankstretch
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - bedtools=2.31.1
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.4.1+cu121
+      # Prebuilt wheel, so no CUDA compile; must match torch 2.4 / Python 3.11.
+      - https://github.com/Dao-AILab/flash-attention/releases/download/v2.6.3/flash_attn-2.6.3+cu123torch2.4cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
+      - epiagent==0.0.2
+      - transformers==4.44.2
+      - numpy==1.26.4
+      - scipy==1.17.1
+      - pandas==2.3.3
+      - anndata==0.12.19
+      - scanpy==1.11.5
+      - h5py==3.16.0
+      - scikit-learn==1.9.1
+      - umap-learn==0.5.12
+      - pynndescent==0.6.0
+      - numba==0.67.0
+      - matplotlib==3.11.2
